@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#5E6975"
+    tools:context=".MainActivity">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.4"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/rates"
+            tools:layout_editor_absoluteX="0dp"
+            android:contentDescription="TODO" />
+
+    <TextView
+        android:id="@+id/lastUpdateTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/michroma"
+        android:gravity="center"
+        android:text="Last Updated: 0000000"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/goldDark"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95" />
+
+    <LinearLayout
+        android:id="@+id/rows"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/usdCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="6dp"
+            app:contentPadding="7dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/usdflag"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/usd" />
+
+                <TextView
+                    android:id="@+id/usdPrice"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingHorizontal="15dp"
+                    android:text=""
+                    android:textColor="@color/goldDark"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/usdName"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingHorizontal="15dp"
+                    android:text="@string/usd"
+                    android:textColor="@color/goldDark"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:id="@+id/usdSign"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingHorizontal="15dp"
+                    android:text="$"
+                    android:textColor="@color/goldDark"
+                    android:textSize="22sp" />
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/eurCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="6dp"
+            app:contentPadding="7dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/eurflag"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/eur"
+                    android:contentDescription="TODO" />
+
+                <TextView
+                    android:id="@+id/eurPrice"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingHorizontal="15dp"
+                    android:text=""
+                    android:textColor="@color/goldDark"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/eurName"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingHorizontal="15dp"
+                    android:text="@string/eur"
+                    android:textColor="@color/goldDark"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:id="@+id/eurSign"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingHorizontal="15dp"
+                    android:text="€"
+                    android:textColor="@color/goldDark"
+                    android:textSize="22sp" />
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cnyCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="6dp"
+            app:contentPadding="7dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/cnyflag"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/cny" />
+
+                <TextView
+                    android:id="@+id/cnyPrice"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingHorizontal="15dp"
+                    android:text=""
+                    android:textColor="@color/goldDark"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/cnyName"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingHorizontal="15dp"
+                    android:text="@string/cny"
+                    android:textColor="@color/goldDark"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:id="@+id/cnySign"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingHorizontal="15dp"
+                    android:text="元"
+                    android:textColor="@color/goldDark"
+                    android:textSize="22sp" />
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/jpyCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="6dp"
+            app:contentPadding="7dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/jpyflag"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/jpy" />
+
+                <TextView
+                    android:id="@+id/jpyPrice"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingHorizontal="15dp"
+                    android:text=""
+                    android:textColor="@color/goldDark"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/jpyName"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingHorizontal="15dp"
+                    android:text="@string/jpy"
+                    android:textColor="@color/goldDark"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:id="@+id/jpySign"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingHorizontal="15dp"
+                    android:text="¥"
+                    android:textColor="@color/goldDark"
+                    android:textSize="22sp" />
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/gbpCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="6dp"
+            app:contentPadding="7dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/gbpflag"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/gbp" />
+
+                <TextView
+                    android:id="@+id/gbpPrice"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingHorizontal="15dp"
+                    android:text=""
+                    android:textColor="@color/goldDark"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/gbpName"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingHorizontal="15dp"
+                    android:text="@string/gbp"
+                    android:textColor="@color/goldDark"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:id="@+id/gbpSign"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingHorizontal="15dp"
+                    android:text="£"
+                    android:textColor="@color/goldDark"
+                    android:textSize="22sp" />
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/rubCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="6dp"
+            app:contentPadding="7dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/rubflag"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/rub" />
+
+                <TextView
+                    android:id="@+id/rubPrice"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingHorizontal="15dp"
+                    android:text=""
+                    android:textColor="@color/goldDark"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/rubName"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingHorizontal="15dp"
+                    android:text="@string/rub"
+                    android:textColor="@color/goldDark"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:id="@+id/rubSign"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingHorizontal="15dp"
+                    android:text="₽"
+                    android:textColor="@color/goldDark"
+                    android:textSize="22sp" />
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/inrCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="6dp"
+            app:contentPadding="7dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/inrflag"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/inr" />
+
+                <TextView
+                    android:id="@+id/inrPrice"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingHorizontal="15dp"
+                    android:text=""
+                    android:textColor="@color/goldDark"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/inrName"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingHorizontal="15dp"
+                    android:text="@string/inr"
+                    android:textColor="@color/goldDark"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:id="@+id/inrSign"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingHorizontal="15dp"
+                    android:text="₹"
+                    android:textColor="@color/goldDark"
+                    android:textSize="22sp" />
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/tryCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="6dp"
+            app:contentPadding="7dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/tryflag"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/tury" />
+
+                <TextView
+                    android:id="@+id/tryPrice"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingHorizontal="15dp"
+                    android:text=""
+                    android:textColor="@color/goldDark"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/tryName"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingHorizontal="15dp"
+                    android:text="@string/tury"
+                    android:textColor="@color/goldDark"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:id="@+id/trySign"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingHorizontal="15dp"
+                    android:text="₺"
+                    android:textColor="@color/goldDark"
+                    android:textSize="22sp" />
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/chfCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="6dp"
+            app:contentPadding="7dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/chfflag"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/chf" />
+
+                <TextView
+                    android:id="@+id/chfPrice"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingHorizontal="15dp"
+                    android:text=""
+                    android:textColor="@color/goldDark"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/chfName"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingHorizontal="15dp"
+                    android:text="CHF"
+                    android:textColor="@color/goldDark"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:id="@+id/chfSign"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:paddingHorizontal="15dp"
+                    android:text="F"
+                    android:textColor="@color/goldDark"
+                    android:textSize="22sp" />
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/michroma"
+        android:text="EXCHANGE  RATES"
+        android:textColor="@color/goldDark"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/rows"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.397" />
+</androidx.constraintlayout.widget.ConstraintLayout>

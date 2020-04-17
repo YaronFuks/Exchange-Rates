@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Exchange Rates</string>
+    <string name="tury">TRY</string>
+    <string name="eur">EUR</string>
+    <string name="usd">USD</string>
+    <string name="cny">CNY</string>
+    <string name="jpy">JPY</string>
+    <string name="gbp">GBP</string>
+    <string name="rub">RUB</string>
+    <string name="inr">INR</string>
+</resources>
